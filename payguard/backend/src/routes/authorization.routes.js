@@ -98,5 +98,21 @@ router.post("/", async (req, res) => {
 
   res.json(policyResult);
 });
+// GET /api/authorize — list authorization records with their current
+// state (ACTIVE / CONSUMED / EXPIRED / ESCALATED / DENIED). Different
+// from the audit log: this shows current state, not historical events.
+router.get("/", async (req, res) => {
+  const { status, agentId, limit = 100 } = req.query;
+
+  const filter = {};
+  if (status) filter.status = status;
+  if (agentId) filter.agentId = agentId;
+
+  const authorizations = await Authorization.find(filter)
+    .sort({ createdAt: -1 })
+    .limit(Math.min(Number(limit), 500));
+
+  res.json(authorizations);
+});
 
 module.exports = router;
