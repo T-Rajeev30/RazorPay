@@ -1,0 +1,21 @@
+{
+  "name": "payguard-backend",
+  "version": "0.1.0",
+  "description": "PayGuard backend — policy engine, catalog, authorization, and Razorpay integration",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "razorpay": "^2.9.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
