@@ -322,6 +322,7 @@ export default function AttackSimulator() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [activeAttack, setActiveAttack] = useState(null);
+  const [progressMessage, setProgressMessage] = useState(null);
 
   async function handleRun(attack) {
     setRunning(attack.id);
@@ -400,6 +401,12 @@ export default function AttackSimulator() {
         </div>
       )}
 
+      {progressMessage && (
+        <div className="mt-6 bg-status-amber/10 border border-status-amber/50 text-status-amber p-4 rounded-lg text-sm font-mono">
+          {progressMessage}
+        </div>
+      )}
+
       {result && activeAttack && (
         <div className="bg-surface-container-low border border-ui-border p-8 rounded-lg mt-6">
           <div className="flex justify-between items-end mb-8 border-b border-ui-border pb-4">
@@ -458,3 +465,5 @@ export default function AttackSimulator() {
     </main>
   );
 }
+
+

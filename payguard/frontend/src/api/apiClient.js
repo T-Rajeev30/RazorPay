@@ -73,3 +73,8 @@ export function approveAuthorization(authorizationId) {
 export function rejectAuthorization(authorizationId) {
   return request(`/approvals/${authorizationId}/reject`, { method: "POST" });
 }
+
+export function getAuthorizations(params = {}) {
+  const query = new URLSearchParams(params).toString();
+  return request(`/authorize${query ? `?${query}` : ""}`);
+}
