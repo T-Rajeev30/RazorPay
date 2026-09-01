@@ -28,6 +28,21 @@ async function seed() {
     currency: "INR",
     quantityAvailable: 10,
   });
+  const expensiveProduct = await Product.create({
+    merchantId: "merchant_123",
+    name: "Dell Precision 7780 Workstation (Xeon, 128GB RAM, RTX 5000)",
+    price: 285000,
+    currency: "INR",
+    quantityAvailable: 3,
+  });
+
+  console.log("");
+  console.log(
+    "[seed] Expensive product created (for injection/escalation demo):",
+  );
+  console.log(`  _id: ${expensiveProduct._id}`);
+  console.log(`  name: ${expensiveProduct.name}`);
+  console.log(`  price: ₹${expensiveProduct.price}`);
 
   const agentPolicy = await AgentPolicy.create({
     agentId: "shopping-agent-01",

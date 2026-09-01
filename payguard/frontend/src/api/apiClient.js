@@ -7,7 +7,19 @@
  */
 const BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+const AGENT_BASE_URL =
+  import.meta.env.VITE_AGENT_BASE_URL || "http://localhost:8001";
 
+export async function askAgentToBuy(message) {
+  const response = await fetch(`${AGENT_BASE_URL}/agent/buy`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message }),
+  });
+  const data = await response.json();
+  if (!response.ok) return { ok: false, status: response.status, data };
+  return { ok: true, status: response.status, data };
+}
 async function request(path, options = {}) {
   const response = await fetch(`${BASE_URL}${path}`, {
     headers: { "Content-Type": "application/json" },

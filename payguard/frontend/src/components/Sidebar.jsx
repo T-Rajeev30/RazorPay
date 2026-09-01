@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { to: "/audit-log", label: "Audit Log", icon: "list_alt" },
   { to: "/human-approvals", label: "Human Approvals", icon: "verified_user" },
   { to: "/evaluation", label: "Evaluation", icon: "analytics" },
+  { to: "/ai-buyer", label: "AI Buyer", icon: "smart_toy" },
 ];
 
 export default function Sidebar() {
