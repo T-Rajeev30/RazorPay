@@ -51,10 +51,11 @@ describe("razorpayService.createOrderForAuthorization", () => {
     expect(fakeClient.orders.create).not.toHaveBeenCalled();
   });
 
-  test("returns a graceful PAYMENT_PROVIDER_ERROR on Razorpay API failure", async () => {
+  test("returns a graceful PAYMENT_PROVIDER_ERROR on genuine Razorpay API failure (no existing order found)", async () => {
     const fakeClient = {
       orders: {
         create: jest.fn().mockRejectedValue(new Error("Network timeout")),
+        all: jest.fn().mockResolvedValue({ items: [] }),
       },
     };
 
@@ -84,6 +85,49 @@ describe("razorpayService.createOrderForAuthorization", () => {
         },
       }),
     );
+  });
+});
+
+describe("razorpayService.createOrderForAuthorization — reconciliation", () => {
+  test("reconciles via receipt lookup when create fails but an order already exists (safe retry)", async () => {
+    const existingOrder = { id: "order_existing123", receipt: "auth_abc123" };
+    const fakeClient = {
+      orders: {
+        create: jest
+          .fn()
+          .mockRejectedValue(new Error("receipt already exists")),
+        all: jest.fn().mockResolvedValue({ items: [existingOrder] }),
+      },
+    };
+
+    const result = await createOrderForAuthorization(
+      fakeClient,
+      consumedAuthorization(),
+    );
+
+    expect(result.success).toBe(true);
+    expect(result.reconciled).toBe(true);
+    expect(result.order.id).toBe("order_existing123");
+    expect(fakeClient.orders.all).toHaveBeenCalledWith({
+      receipt: "auth_abc123",
+    });
+  });
+
+  test("reports the original failure if the reconciliation lookup itself fails", async () => {
+    const fakeClient = {
+      orders: {
+        create: jest.fn().mockRejectedValue(new Error("Network timeout")),
+        all: jest.fn().mockRejectedValue(new Error("lookup also failed")),
+      },
+    };
+
+    const result = await createOrderForAuthorization(
+      fakeClient,
+      consumedAuthorization(),
+    );
+
+    expect(result.success).toBe(false);
+    expect(result.error.message).toBe("Network timeout"); // not masked by the lookup error
   });
 });
 

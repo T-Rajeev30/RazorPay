@@ -13,17 +13,28 @@
  * IMPORTANT: This module only executes payments for authorizations
  * that have already been ALLOWed and consumed by authorizationService.
  * It never makes an authorization decision itself.
+ *
+ * IDEMPOTENCY NOTE: Razorpay's Orders API treats `receipt` as an
+ * idempotency key — a second orders.create() call with a receipt that
+ * already exists is rejected, not duplicated. We set receipt to the
+ * authorizationId specifically so a network-retry of this exact call
+ * can never create a second real order. But a naive implementation
+ * would then report that retry as a hard failure even though the
+ * payment actually succeeded the first time — this module reconciles
+ * that by checking for an existing order under the same receipt before
+ * concluding a creation error is a genuine failure.
  */
 
 /**
  * Creates a Razorpay test-mode order for an already-consumed
- * authorization. Should only ever be called after
- * authorizationService.consumeAuthorization() has succeeded.
+ * authorization. Should only ever be called after the authorization
+ * has been atomically consumed by the caller.
  *
  * @param {Object} razorpayClient - an instance of the `razorpay` SDK
  *   (or a fake with the same shape) — must expose `orders.create`
+ *   and `orders.all`
  * @param {Object} authorization - a CONSUMED authorization record
- * @returns {Promise<Object>} { success, order? , error? }
+ * @returns {Promise<Object>} { success, order?, error?, reconciled? }
  */
 async function createOrderForAuthorization(razorpayClient, authorization) {
   if (authorization.status !== "CONSUMED") {
@@ -49,6 +60,18 @@ async function createOrderForAuthorization(razorpayClient, authorization) {
 
     return { success: true, order };
   } catch (error) {
+    // Before concluding this is a genuine failure, check whether an
+    // order already exists under this exact receipt — that would mean
+    // a prior attempt actually succeeded (e.g. the response was lost
+    // to a network blip) and this is a safe retry, not a new failure.
+    const reconciled = await reconcileByReceipt(
+      razorpayClient,
+      authorization.authorizationId,
+    );
+    if (reconciled) {
+      return { success: true, order: reconciled, reconciled: true };
+    }
+
     // Graceful failure per the build directive: a provider error must
     // never be mistaken for a security block, and must never silently
     // retry. The caller is responsible for NOT re-consuming the
@@ -60,6 +83,28 @@ async function createOrderForAuthorization(razorpayClient, authorization) {
         message: error.message || "Unknown Razorpay error",
       },
     };
+  }
+}
+
+/**
+ * Looks up an existing order by its receipt value. Used to distinguish
+ * "this create call genuinely failed" from "this create call is a
+ * retry of one that already succeeded." Razorpay treats `receipt` as
+ * an idempotency key on the Orders API.
+ *
+ * @returns the existing order object, or null if none is found (or the
+ *   lookup itself fails — in which case we fall through to reporting
+ *   the original error rather than masking it).
+ */
+async function reconcileByReceipt(razorpayClient, receipt) {
+  try {
+    const existing = await razorpayClient.orders.all({ receipt });
+    if (existing && existing.items && existing.items.length > 0) {
+      return existing.items[0];
+    }
+    return null;
+  } catch (lookupError) {
+    return null; // fail closed to the original error, don't mask it with a lookup failure
   }
 }
 
@@ -92,4 +137,8 @@ function verifyPaymentSignature(
   }
 }
 
-module.exports = { createOrderForAuthorization, verifyPaymentSignature };
+module.exports = {
+  createOrderForAuthorization,
+  verifyPaymentSignature,
+  reconcileByReceipt,
+};
