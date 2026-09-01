@@ -14,6 +14,8 @@ const authorizationRoutes = require("./routes/authorization.routes");
 const paymentRoutes = require("./routes/payment.routes");
 const auditRoutes = require("./routes/audit.routes");
 const approvalRoutes = require("./routes/approval.routes");
+const path = require("path");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -23,6 +25,10 @@ app.use("/api/authorize", authorizationRoutes);
 app.use("/api/pay", paymentRoutes);
 app.use("/api/audit-log", auditRoutes);
 app.use("/api/approvals", approvalRoutes);
+app.use(
+  "/api/evaluation-results",
+  express.static(path.join(__dirname, "../../evaluation/results")),
+);
 app.get("/api/health", (req, res) => res.json({ status: "ok" }));
 
 const PORT = process.env.PORT || 4000;

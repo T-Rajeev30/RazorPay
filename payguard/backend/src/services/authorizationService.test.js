@@ -68,7 +68,7 @@ describe("authorizationService.authorizePurchase", () => {
     expect(result.authorization).toBeUndefined();
   });
 
-  test("does NOT issue an authorization when policy ESCALATEs", () => {
+  test("does NOT issue an ACTIVE authorization when policy ESCALATEs — issues a pending ESCALATED one instead", () => {
     const proposal = { ...baseProposal(), proposedPrice: 72000 };
     const authoritative = { ...baseAuthoritative(), currentPrice: 72000 };
     const result = authorizePurchase(
@@ -80,7 +80,8 @@ describe("authorizationService.authorizePurchase", () => {
     );
 
     expect(result.decision).toBe("ESCALATE");
-    expect(result.authorization).toBeUndefined();
+    expect(result.authorization).toBeDefined();
+    expect(result.authorization.status).toBe("ESCALATED");
   });
 
   test("issued authorization has a valid, verifiable signature", () => {

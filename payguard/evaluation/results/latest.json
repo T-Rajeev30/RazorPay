@@ -1,0 +1,1339 @@
+{
+  "summary": {
+    "generatedAt": "2026-09-01T10:28:45.475Z",
+    "totalScenarios": 145,
+    "legitimateTransactions": 60,
+    "attackScenarios": 85,
+    "falseAllowRate": 0,
+    "falseBlockRate": 0,
+    "avgPolicyEvaluationLatencyMs": 308.26666666666665,
+    "detectionRateByType": {
+      "LEGITIMATE": {
+        "total": 60,
+        "correct": 60,
+        "rate": 1
+      },
+      "PRICE_MANIPULATION": {
+        "total": 15,
+        "correct": 15,
+        "rate": 1
+      },
+      "QUANTITY_MANIPULATION": {
+        "total": 15,
+        "correct": 15,
+        "rate": 1
+      },
+      "BUDGET_ESCALATION": {
+        "total": 15,
+        "correct": 15,
+        "rate": 1
+      },
+      "MERCHANT_SUBSTITUTION": {
+        "total": 15,
+        "correct": 15,
+        "rate": 1
+      },
+      "CURRENCY_MANIPULATION": {
+        "total": 15,
+        "correct": 15,
+        "rate": 1
+      },
+      "REPLAY_ATTACK": {
+        "total": 10,
+        "correct": 10,
+        "rate": 1
+      }
+    },
+    "knownLimitations": [
+      "Stale/expired authorization scenarios are excluded — each requires waiting out the real 30s TTL, impractical at this scale within the time budget.",
+      "Price manipulation scenarios mutate and restore the live catalog price sequentially; do not run this concurrently with other traffic against the same backend."
+    ]
+  },
+  "results": [
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 377,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 316,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 354,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 336,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 322,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 278,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 356,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 287,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 340,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 295,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 316,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 368,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 349,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 288,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 315,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 279,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 314,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 383,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 364,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 557,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 282,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 384,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 323,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 319,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 286,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 369,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 366,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 383,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 343,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 309,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 370,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 300,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 299,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 321,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 263,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 346,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 287,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 409,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 294,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 357,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 296,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 396,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 329,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 360,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 307,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 440,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 316,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 385,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 310,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 378,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 292,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 357,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 325,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 282,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 272,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 443,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 307,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 347,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 646,
+      "correct": true
+    },
+    {
+      "type": "LEGITIMATE",
+      "expectedDecision": "ALLOW",
+      "expectedReasonCode": null,
+      "actualDecision": "ALLOW",
+      "actualReasonCode": null,
+      "latencyMs": 318,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 184,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 245,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 202,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 243,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 288,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 318,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 252,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 209,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 295,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 263,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 264,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 249,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 286,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 211,
+      "correct": true
+    },
+    {
+      "type": "PRICE_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "PRICE_CHANGED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "PRICE_CHANGED",
+      "latencyMs": 238,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 247,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 224,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 200,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 247,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 280,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 217,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 265,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 215,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 209,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 226,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 207,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 195,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 253,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 205,
+      "correct": true
+    },
+    {
+      "type": "QUANTITY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "QUANTITY_EXCEEDED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "QUANTITY_EXCEEDED",
+      "latencyMs": 267,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 351,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 337,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 351,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 288,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 333,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 364,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 444,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 330,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 298,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 322,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 322,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 366,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 278,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 573,
+      "correct": true
+    },
+    {
+      "type": "BUDGET_ESCALATION",
+      "expectedDecision": "ESCALATE",
+      "expectedReasonCode": "BUDGET_EXCEEDED",
+      "actualDecision": "ESCALATE",
+      "actualReasonCode": "BUDGET_EXCEEDED",
+      "latencyMs": 334,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 240,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 448,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 180,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 232,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 264,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 203,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 223,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 331,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 234,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 318,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 243,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 241,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 242,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 222,
+      "correct": true
+    },
+    {
+      "type": "MERCHANT_SUBSTITUTION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "MERCHANT_MISMATCH",
+      "actualDecision": "DENY",
+      "actualReasonCode": "MERCHANT_MISMATCH",
+      "latencyMs": 243,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 527,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 259,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 519,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 224,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 205,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 252,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 216,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 279,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 225,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 210,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 526,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 306,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 564,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 231,
+      "correct": true
+    },
+    {
+      "type": "CURRENCY_MANIPULATION",
+      "expectedDecision": "DENY",
+      "expectedReasonCode": "CURRENCY_NOT_ALLOWED",
+      "actualDecision": "DENY",
+      "actualReasonCode": "CURRENCY_NOT_ALLOWED",
+      "latencyMs": 204,
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    },
+    {
+      "type": "REPLAY_ATTACK",
+      "expectedDecision": "DENY",
+      "actualDecision": "DENY",
+      "actualReasonCode": "AUTHORIZATION_ALREADY_CONSUMED",
+      "correct": true
+    }
+  ]
+}

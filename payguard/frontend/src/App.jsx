@@ -6,6 +6,7 @@ import AttackSimulator from "./pages/AttackSimulator";
 import AuditLog from "./pages/AuditLog";
 import HumanApprovals from "./pages/HumanApprovals";
 import AIBuyer from "./pages/AIBuyer";
+import Evaluation from "./pages/Evaluation";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/audit-log" element={<AuditLog />} />
           <Route path="/human-approvals" element={<HumanApprovals />} />;
           <Route path="/ai-buyer" element={<AIBuyer />} />;
+          <Route path="/evaluation" element={<Evaluation />} />;
         </Routes>
       </div>
     </BrowserRouter>
