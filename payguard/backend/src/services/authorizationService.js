@@ -47,27 +47,29 @@ function authorizePurchase(
     priorAuthorization,
   );
 
-  if (policyResult.decision !== "ALLOW") {
-    return policyResult; // DENY or ESCALATE — no authorization object issued
+  if (policyResult.decision === "DENY") {
+    return policyResult; // no authorization object issued
   }
 
+  // Both ALLOW and ESCALATE get a signed record — ALLOW is immediately
+  // usable (ACTIVE), ESCALATE sits pending until a human decides.
+  const status = policyResult.decision === "ALLOW" ? "ACTIVE" : "ESCALATED";
   const authorization = buildAuthorization(
     proposal,
     policyResult,
     agentPolicy,
     signingSecret,
+    status,
   );
   return { ...policyResult, authorization };
 }
 
-/**
- * Constructs and signs the authorization object for an ALLOWed decision.
- */
 function buildAuthorization(
   proposal,
   policyResult,
   agentPolicy,
   signingSecret,
+  status = "ACTIVE",
 ) {
   const nonce = crypto.randomBytes(16).toString("hex");
   const authorizationId = `auth_${crypto.randomBytes(12).toString("hex")}`;
@@ -91,11 +93,10 @@ function buildAuthorization(
 
   return {
     ...payload,
-    status: "ACTIVE",
+    status,
     signature,
   };
 }
-
 /**
  * Deterministic HMAC-SHA256 signature over the canonical JSON of the
  * authorization payload (excluding the signature field itself).

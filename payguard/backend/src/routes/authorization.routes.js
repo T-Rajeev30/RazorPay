@@ -74,11 +74,17 @@ router.post("/", async (req, res) => {
     }),
   );
 
-  if (policyResult.decision === "ALLOW") {
+  if (
+    policyResult.decision === "ALLOW" ||
+    policyResult.decision === "ESCALATE"
+  ) {
     await Authorization.create(policyResult.authorization);
     await AuditLog.create(
       buildAuditEvent({
-        action: "AUTHORIZATION_CREATED",
+        action:
+          policyResult.decision === "ALLOW"
+            ? "AUTHORIZATION_CREATED"
+            : "HUMAN_APPROVAL_REQUESTED",
         agentId: proposal.agentId,
         authorizationId: policyResult.authorization.authorizationId,
         merchantId: proposal.merchantId,
